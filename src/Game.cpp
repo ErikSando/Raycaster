@@ -67,19 +67,19 @@ namespace Game {
             switch (event.type) {
                 case SDL_QUIT:
                     running = false;
-                    break;
+                break;
 
                 case SDL_KEYDOWN:
                     Input::HandleKeyDown(event);
-                    break;
+                break;
 
                 case SDL_KEYUP:
                     Input::HandleKeyUp(event);
-                    break;
+                break;
 
                 case SDL_WINDOWEVENT_FOCUS_LOST:
                     Input::Reset();
-                    break;
+                break;
             }
         }
     }
@@ -207,6 +207,8 @@ namespace Game {
         Input::Init();
 
         setup = true;
+
+        //SDL_SetRelativeMouseMode(SDL_TRUE);
 
         Run();
     }
